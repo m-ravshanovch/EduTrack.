@@ -4,9 +4,9 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link, useNavigate } from 'react-router-dom';
-export default () => {
-  const baseUrl = "http://localhost:5000/users"
-  const baseUrl2 = "http://localhost:5000/type"
+export default function Users() {
+  const baseUrl = "https://edutrackdata.onrender.com/users"
+  const baseUrl2 = "https://edutrackdata.onrender.com/type"
   const [data, setData] = useState([])
   const [main, setMain] = useState([])
   const navigate = useNavigate()
