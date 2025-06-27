@@ -2,12 +2,12 @@ import React, { useState,useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-export default () => {
+export default function AddUser() {
     const navigate=useNavigate()
     const [input, setInput] = useState({ name: '', Surname: '', university: '' })
     const [user ,setUser]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5000/users').then((res)=>{
+        axios.get('https://edutrackdata.onrender.com/users').then((res)=>{
             setUser(res.data)
         }).catch((err)=>{
             console.log(err)
@@ -20,7 +20,7 @@ export default () => {
             id:lastId+1,
             ...input
         }
-        axios.post('http://localhost:5000/users', newUser).then((res) => {
+        axios.post('https://edutrackdata.onrender.com/users', newUser).then((res) => {
             alert("User added Successfully");
             setUser([...user,newUser]);
             setInput({ name: '', Surname: '', university: '' })

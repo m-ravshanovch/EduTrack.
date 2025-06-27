@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export default () => {
+export default function EditUser() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [update, setUpdate] = useState({
@@ -13,7 +13,7 @@ export default () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/users/${id}`) 
+            .get(`https://edutrackdata.onrender.com/users/${id}`)
             .then((res) => {
                 if (res.data) {
                     setUpdate(res.data);
@@ -27,7 +27,7 @@ export default () => {
     const updateData = (event) => {
         event.preventDefault(); 
         axios
-            .put(`http://localhost:5000/users/${id}`, update)
+            .put(`https://edutrackdata.onrender.com/users/${id}`, update)
             .then(() => {
                 alert('User updated successfully!');
                 navigate('/Users'); 

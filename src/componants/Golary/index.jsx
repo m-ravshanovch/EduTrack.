@@ -4,17 +4,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-export default () => {
+export default function Gallery() {
   useEffect(() => {
     AOS.init({
-      duration: 700, 
-      offset:250,    
-      easing: 'ease-in-out', 
+      duration: 700,
+      offset: 250,
+      easing: 'ease-in-out',
     });
   }, []);
   const [pic, setPic] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:5000/pic').then((res) => {
+    axios.get('https://edutrackdata.onrender.com/pic').then((res) => {
       setPic(res.data)
     }).catch((err) => {
       console.log(err)

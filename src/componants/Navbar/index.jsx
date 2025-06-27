@@ -9,7 +9,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (window.innerWidth >= 768) {
-        if (e.clientX <= 200) {
+        if (e.clientX<= 200) {
           setIsVisible(true);
         } else {
           setIsVisible(false);

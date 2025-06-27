@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default() => {
+export default function Contact() {
   return (
-    <div>index</div>
+    <div>Contact</div>
   )
 }
